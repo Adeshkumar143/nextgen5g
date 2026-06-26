@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen 5G eSIM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">⚡ NextGen 5G</div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Switch to the Future.<br><span>Unlimited 5G eSIM</span></h1>
+        <p>No physical store. No plastic card. Scan the QR code and activate high-speed 5G instantly.</p>
+        <a href="#pricing" class="btn-primary">Get Your eSIM Now</a>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <h2>Simple Pricing, No Hidden Fees</h2>
+        <div class="card">
+            <h3>Student Mega Plan</h3>
+            <div class="price">₹1,999<span> / Year</span></div>
+            <ul>
+                <li>🚀 True Unlimited 5G Data</li>
+                <li>📞 Unlimited Calling & SMS</li>
+                <li>📱 Digital Delivery via Email in 60 Seconds</li>
+                <li>🌍 Works on all eSIM compatible phones</li>
+            </ul>
+            <button class="btn-buy" onclick="openPaymentModal()">Buy eSIM Now</button>
+        </div>
+    </section>
+
+    <!-- CUSTOM PAYMENT MODAL -->
+    <div id="paymentModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closePaymentModal()">&times;</span>
+            <div class="modal-header">
+                <h3>⚡ NextGen 5G Secure Checkout</h3>
+                <p>1 Year Student Plan — Amount: <strong>₹1,999</strong></p>
+            </div>
+            
+            <!-- Payment QR Code -->
+            <div class="qr-section">
+                <img src="https://qrserver.com" alt="Scan to Pay">
+                <p>Scan this secure QR code using GPay, PhonePe, or Paytm</p>
+            </div>
+
+            <div class="prefill-info">
+                <p><strong>Payer:</strong> Adesh Bhai</p>
+                <p><strong>Email:</strong> adesh@example.com</p>
+            </div>
+
+            <button class="btn-success" onclick="simulateSuccess()">Simulate Success Payment</button>
+        </div>
+    </div>
+
+    <!-- FINAL AUTOMATED JAVASCRIPT -->
+    <script>
+        function openPaymentModal() {
+            document.getElementById("paymentModal").style.display = "flex";
+        }
+
+        function closePaymentModal() {
+            document.getElementById("paymentModal").style.display = "none";
+        }
+
+        function simulateSuccess() {
+            closePaymentModal();
+            var esimProfileId = "LPA:1$://nextgen5g.com$ST-" + Math.floor(100000 + Math.random() * 900000);
+            var qrCodeUrl = "https://qrserver.com" + encodeURIComponent(esimProfileId);
+
+            document.body.innerHTML = `
+                <div style="background-color: #0b0f19; color: white; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: sans-serif; text-align: center; padding: 20px;">
+                    <h1 style="color: #00ffcc; margin-bottom: 10px;">🎉 Payment Successful!</h1>
+                    <p style="color: #94a3b8; font-size: 18px; max-width: 500px; margin-bottom: 30px;">Adesh Bhai, aapka plan active ho gaya hai. Niche diye gaye 5G eSIM QR Code ko apne phone ke Settings -> Mobile Data me jaakar scan karein.</p>
+                    
+                    <div style="background: white; padding: 15px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,255,204,0.4); margin-bottom: 20px;">
+                        <img src="${qrCodeUrl}" alt="Your 5G eSIM" style="display: block;">
+                    </div>
+                    
+                    <p style="color: #00ffcc; font-weight: bold; font-size: 14px; background: #1e293b; padding: 10px 20px; border-radius: 5px;">
+                        Profile ID: ${esimProfileId}
+                    </p>
+                    
+                    <button onclick="window.location.reload()" style="margin-top: 40px; background: transparent; color: #94a3b8; border: 1px solid #334155; padding: 10px 20px; border-radius: 50px; cursor: pointer;">
+                        Back to Home
+                    </button>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
