@@ -1,0 +1,252 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(11, 15, 25, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: radial-gradient(circle at center, #1e293b 0%, #0b0f19 100%);
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #00ffcc;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #94a3b8;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background-color: #00ffcc;
+    color: #0b0f19;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 120px 20px;
+    text-align: center;
+    background-color: #0f172a;
+    position: relative;
+    z-index: 10;
+}
+
+.pricing h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background-color: #1e293b;
+    border: 2px solid #334155;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 20;
+}
+
+.card:hover {
+    border-color: #00ffcc;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #94a3b8;
+}
+
+.price {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.price span {
+    font-size: 18px;
+    color: #94a3b8;
+}
+
+.card ul {
+    text-align: left;
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.card ul li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #cbd5e1;
+}
+
+.btn-buy {
+    background-color: #00ffcc;
+    color: #0b0f19;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    z-index: 30;
+    display: block;
+}
+
+.btn-buy:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+}
+
+/* Custom Payment Modal Overlap Background */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Modal Box Design */
+.modal-box {
+    background-color: #1e293b;
+    border: 2px solid #00ffcc;
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
+}
+
+.modal-header h3 {
+    color: #00ffcc;
+    margin-bottom: 15px;
+}
+
+.modal-header p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* QR Code styling */
+.qr-section img {
+    border: 5px solid white;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.qr-section p {
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+.prefill-info {
+    background-color: #0f172a;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Close button top right */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ffffff;
+}
+
+/* Success Button */
+.btn-success {
+    background-color: #00ffcc;
+    color: #0b0f19;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #00cc99;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+}
